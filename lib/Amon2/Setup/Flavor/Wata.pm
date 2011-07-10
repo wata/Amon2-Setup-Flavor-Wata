@@ -162,11 +162,13 @@ any '/' => sub {
 
 <hr class="space">
 
-<div class="span-15 colborder">
-    <h2>Let's get started</h2>
-    <p></p>
+<div id="content" class="span-17 colborder">
+    <h2>Let's get started!</h2>
+    <p>description...</p>
 </div>
-<div class="span-8 last">
+
+<div id="side" class="span-6 last">
+    <h3 class="thin">Side menu</h3>
     <ul>
     <li>
         <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://amon.64p.org/" data-text="Amon2 - Web application framework for Rapid web development — Amon2 v documentation" data-count="horizontal" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -207,10 +209,10 @@ any '/' => sub {
 </head>
 <body[% IF bodyID %] class="[% bodyID %]"[% END %]>
     <div class="container">
-        <div id ="header">
+        <div id ="header" class="span-24 large fancy">
             <h1><a href="[% uri_for('/') %]"><%= $dist %></a></h1>
         </div>
-        <div id="content">
+        <div id="wrapper" class="span-24">
             [% content %]
         </div>
         <div id="footer">
