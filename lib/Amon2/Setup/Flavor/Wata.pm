@@ -160,15 +160,12 @@ any '/' => sub {
     $self->write_file('tmpl/index.tt', <<'...');
 [% WRAPPER 'include/layout.tt' %]
 
-<hr class="space">
-
 <div id="content" class="span-17 colborder">
     <h2>Let's get started!</h2>
     <p>description...</p>
 </div>
 
 <div id="side" class="span-6 last">
-    <h3 class="thin">Side menu</h3>
     <ul>
     <li>
         <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://amon.64p.org/" data-text="Amon2 - Web application framework for Rapid web development — Amon2 v documentation" data-count="horizontal" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -212,10 +209,16 @@ any '/' => sub {
         <div id ="header" class="span-24 large fancy">
             <h1><a href="[% uri_for('/') %]"><%= $dist %></a></h1>
         </div>
+
+        <hr>
+
         <div id="wrapper" class="span-24">
             [% content %]
         </div>
-        <div id="footer">
+
+        <hr>
+
+        <div id="footer" class="span-24">
             <address>&copy; <%= $dist %></address>
         </div>
     </div>
