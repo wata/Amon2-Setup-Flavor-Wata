@@ -7,6 +7,7 @@ use parent qw(Amon2::Setup::Flavor::Minimum);
 use Amon2::Setup::Asset::jQuery;
 use Amon2::Setup::Asset::BlueTrip;
 use HTTP::Status qw/status_message/;
+use utf8;
 use File::Copy;
 
 sub run {
@@ -16,9 +17,6 @@ sub run {
 
     $self->mkpath('static/img/');
     $self->mkpath('static/js/');
-    $self->mkpath('extlib/lib/perl5/');
-    $self->mkpath('script/');
-    $self->mkpath('sandbox/');
 
     $self->write_file('lib/<<PATH>>.pm', <<'...');
 package <% $module %>;
@@ -165,18 +163,19 @@ any '/' => sub {
 <hr class="space">
 
 <div class="span-15 colborder">
-    <h2>MyApp</h2>
+    <h2>Let's get started</h2>
+    <p></p>
 </div>
 <div class="span-8 last">
     <ul>
     <li>
-        <a href="http://twitter.com/share" class="twitter-share-button" data-url="[% uri_for('/') %]" data-text="[% title || '<%= $dist %>' %]" data-count="horizontal" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://amon.64p.org/" data-text="Amon2 - Web application framework for Rapid web development — Amon2 v documentation" data-count="horizontal" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </li>
     <li>
-        <iframe src="http://www.facebook.com/plugins/like.php?href=[% uri_for('/') | uri %]&amp;layout=button_count&amp;show_faces=true&amp;width=108&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:108px; height:21px;" allowTransparency="true"></iframe>
+        <iframe src="http://www.facebook.com/plugins/like.php?href=[% 'http://amon.64p.org/' | uri %]&amp;layout=button_count&amp;show_faces=true&amp;width=108&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:108px; height:21px;" allowTransparency="true"></iframe>
     </li>
     <li>
-        <a href="http://b.hatena.ne.jp/entry/[% uri_for('/') %]" class="hatena-bookmark-button" data-hatena-bookmark-title="[% title || '<%= $dist %>' %]" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        <a href="http://b.hatena.ne.jp/entry/http://amon.64p.org/" class="hatena-bookmark-button" data-hatena-bookmark-title="Amon2 - Web application framework for Rapid web development — Amon2 v documentation" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
     </li>
     </ul>
 </div>
