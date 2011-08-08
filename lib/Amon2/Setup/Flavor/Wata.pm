@@ -186,19 +186,19 @@ any '/' => sub {
 
     $self->{jquery_min_basename} = Amon2::Setup::Asset::jQuery->jquery_min_basename();
     $self->write_file('tmpl/include/layout.tt', <<'...');
-<!doctype html">
-<html lang="ja"">
+<!doctype html>
+<html lang="ja">
 <head>
-    <meta charset=utf-8" />
+    <meta charset="utf-8" />
     <title>[% title || '<%= $dist %>' %]</title>
     <meta name="Author" content="<%= $dist %>" />
     <meta name="Keywords" content="<%= $dist %>" />
     <meta name="Description" content="<%= $dist %>" />
     <meta name="format-detection" content="telephone=no" />
-    <link href="[% uri_for('/static/css/screen.css') %]" rel="stylesheet" type="text/css" media="screen" />
+    <link href="[% uri_for('/static/css/screen.css') %]" rel="stylesheet" type="text/css" media="screen, projection" />
     <link href="[% uri_for('/static/css/print.css') %]" rel="stylesheet" type="text/css" media="print" />
     <!--[if lt IE 8]><link rel="stylesheet" href="[% uri_for('/static/css/ie.css') %]" type="text/css" media="screen, projection"><![endif]-->
-    <link href="[% uri_for('/static/css/style.css') %]" rel="stylesheet" type="text/css" media="screen" />
+    <link href="[% uri_for('/static/css/style.css') %]" rel="stylesheet" type="text/css" media="screen, projection" />
     <script src="[% uri_for('/static/js/<% $jquery_min_basename %>') %]"></script>
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
